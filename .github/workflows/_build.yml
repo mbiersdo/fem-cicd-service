@@ -10,7 +10,7 @@ on:
       node-version:
         description: Node.js version (e.g. `22.22`) to use for the build.
         required: false
-        default: '22.22'
+        default: "22.22"
         type: string
       artifact-name:
         description: Name of the uploaded artifact.
@@ -22,9 +22,6 @@ on:
         description: Name of the artifact produced by the build job.
         value: ${{ jobs.build.outputs.artifact-name }}
 
-permissions:
-  contents: read
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,7 +29,7 @@ jobs:
       artifact-name: ${{ steps.echo.outputs.name }}
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@v4
 
       - name: Build Astro
         uses: ./.github/actions/build-astro
