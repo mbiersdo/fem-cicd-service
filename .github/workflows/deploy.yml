@@ -18,7 +18,6 @@ jobs:
     uses: ./.github/workflows/_build.yml
 
   deploy:
-    environment: production
     permissions:
       contents: read
       id-token: write
